@@ -1,0 +1,16 @@
+html{
+    cursor: url(../img/mata_mosca.png) 30 30, auto;
+}
+/* Colocando a imagem de fundo */
+body{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../img/bg.jpg);
+}
+
+/* CSS da mosca */
+#fly{
+    display: none;
+    width: 100px;
+    position: absolute;
+}
