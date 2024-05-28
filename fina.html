@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="INVESTPY">
+    <style>
+        body,
+        h1,
+        h2,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        
+        .FormAddOrcamento,
+        .FormAddDespesa {
+            background-color: #FFF;
+            border-radius: 20px;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .FormAddOrcamento h2,
+        .FormAddDespesa h2 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .FormAddOrcamento input,
+        .FormAddDespesa input {
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 3px 15px -4px #575757;
+            outline: none;
+        }
+
+        .FormAddOrcamento button,
+        .FormAddDespesa button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: blueviolet;
+            color: #FFF;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .FormAddOrcamento button:hover,
+        .FormAddDespesa button:hover {
+            background-color: #6a5acd;
+        }
+
+        /* Lista de Despesas */
+        .containerDespesas {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .containerDespesasCabecalho {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .containerDespesasCabecalho p {
+            font-weight: bold;
+        }
+
+        .containerDespesas_lista li {
+            background-color: #ecfbef;
+            color: #78ce71;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        
+        .secaoResultados {
+            background-color: #FFF;
+            border-radius: 20px;
+            padding: 20px;
+            width: 300px;
+        }
+
+        .secaoResultados div {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .secaoResultados div h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .secaoResultados div p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: blueviolet;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+    <title>Controle de Gastos</title>
+</head>
+
+<body>
+    <main>
+        <section class="secaoAddInfo">
+            <h1>CONTROLE DE GASTO INVESTPY</h1>
+            <div class="FormAddOrcamento">
+                <h2>Seu orçamento</h2>
+                <input type="text">
+                <button>Calcular</button>
+            </div>
+            <div class="FormAddDespesa">
+                <h2>Nome despesa</h2>
+                <input type="text" class="FormAddDespesa_Nome">
+                <h2>Valor despesa</h2>
+                <input type="number" class="FormAddDespesa_Valor">
+                <button>Adicionar despesa</button>
+            </div>
+            <div class="containerDespesas">
+                <div class="containerDespesasCabecalho">
+                    <p class="tituloDespesa">Título despesa</p>
+                    <p>Valor despesa</p>
+                </div>
+                <ul class="containerDespesas_lista"></ul>
+            </div>
+        </section>
+        <section class="secaoResultados">
+            <div class="secaoResultados_Orcamento">
+                <h3>Orçamento</h3>
+                <p>+R$ 0</p>
+            </div>
+            <div class="secaoResultados_Despesas">
+                <h3>Despesas</h3>
+                <p>- R$0</p>
+            </div>
+            <div class="secaoResultados_Saldo">
+                <h3>Saldo</h3>
+                <p>R$0</p>
+            </div>
+        </section>
+    </main>
+    <footer>Feito por <a href="https://xicakong.simdif.com/nossas_ideias.html?fbclid=PAZXh0bgNhZW0CMTEAAabPP1kap1zjcKO4tSa_SndhC_g33zqQMXVMgE5xf995YacW1eMAuv792rg_aem_Ae4BWsLt-7NQIdScUqNn0jRxezb6YhbX-_PCCldqOGBP2ScRFNdzarEV0BvSbvU7p8Zr4uvWafw8AjQWYJrW4xf5" target="_blank">Investpy</a>.</footer>
+
+    <script>
+        
+        function salvarDados() {
+            const orcamento = document.querySelector('.FormAddOrcamento input').value;
+            const despesaNome = document.querySelector('.FormAddDespesa_Nome').value;
+            const despesaValor = document.querySelector('.FormAddDespesa_Valor').value;
+
+            localStorage.setItem('orcamento', orcamento);
+            localStorage.setItem('despesaNome', despesaNome);
+            localStorage.setItem('despesaValor', despesaValor);
+
+            
+            const saldo = parseFloat(orcamento) - parseFloat(despesaValor);
+            localStorage.setItem('saldo', saldo);
+        }
+
+        
+        function carregarDados() {
+            const orcamento = localStorage.getItem('orcamento');
+            const despesaNome = localStorage.getItem('despesaNome');
+            const despesaValor = localStorage.getItem('despesaValor');
+            const saldo = localStorage.getItem('saldo');
+
+            if (orcamento) {
+                document.querySelector('.FormAddOrcamento input').value = orcamento;
+            }
+
+            if (despesaNome) {
+                document.querySelector('.FormAddDespesa_Nome').value = despesaNome;
+            }
+
+            if (despesaValor) {
+                document.querySelector('.FormAddDespesa_Valor').value = despesaValor;
+            }
+
+            if (saldo) {
+                
+                document.querySelector('.secaoResultados_Saldo p').textContent = 'R$' + saldo;
+            }
+        }
+
+        
+        window.addEventListener('load', carregarDados);
+
+        
+        document.querySelector('.FormAddDespesa button').addEventListener('click', salvarDados);
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vire um influenciador </title>
+    <style>
+        @property --rotate {
+            syntax: "<angle>";
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background: black; /* Fundo preto */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            box-sizing: border-box;
+            margin: 0;
+            color: #f8f8f8; /* Letras brancas */
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background: black; /* Fundo preto */
+            width: 90%;
+            height: 90%;
+            padding: 3px;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Sombra suave */
+        }
+
+        .container::before {
+            content: "";
+            display: block;
+            width: 104%;
+            height: 110%;
+            border-radius: 8px;
+            background: conic-gradient(
+                    from var(--rotate) at 50% 50%,
+                    #ff69b4 0%, /* Rosa */
+                    #800080 25%, /* Roxo */
+                    #0000ff 50%, /* Azul */
+                    #000 75%, /* Preto */
+                    #0000ff 100% /* Azul */
+                ),
+                #8bdbe5; /* Azul claro */
+            position: absolute;
+            z-index: -1;
+            top: -5%;
+            left: -2%;
+            animation: spin 10s linear infinite; /* Velocidade reduzida */
+        }
+
+        @keyframes spin {
+            0% {
+                --rotate: 0deg;
+            }
+            100% {
+                --rotate: 360deg;
+            }
+        }
+
+        .title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .content {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .redirect-button {
+            background-color: #ff0000; /* Vermelho */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 20px; /* Bordas redondas */
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Efeito de transição */
+        }
+
+        .redirect-button:hover {
+            background-color: #cc0000; /* Vermelho mais escuro ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Ola, eu sou Vinícius, bem vindo ao meu site</h1>
+        <p class="subtitle">SOBRE O PROJETO</p>
+        <p class="content"> Wubba lubba dub dub! Bem-vindos, seres intergalácticos! Este é um portal para um universo de conhecimento e diversão, onde o tempo e o espaço se entrelaçam. Aqui, vocês encontrarão uma incrível jornada pelo abandono de emprego, com explicações que desafiam as leis da física e uma vastidão de possibilidades para explorar. Navegue pelas estrelas da nossa seção de finanças pessoais, mergulhe em aventuras interdimensionais com nossos jogos e muito mais. Abra o menu, viaje pelo cosmos da minha mente, expanda seus horizontes. Espero que se divirtam e desfrutem desta odisseia intergaláctica. Vamos lá, galera!</p>
+        <button class="redirect-button" onclick="window.location.href='vini.html'">prosseguir!</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vini flix</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        padding: 20px;
+    }
+    .video-container {
+        margin-bottom: 20px;
+        position: relative;
+        cursor: pointer;
+    }
+    .video-thumbnail {
+        width: 100%;
+        height: auto;
+    }
+    .video-title {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+<p> essa área não esta disponível no momento, contém alguns filmes<br>
+em breve iremos atualizar a interface, e os filmes. <br>
+no momento a interface está em customização e preparo.</p>
+
+<div class="video-container" onclick="playVideo('VW2sKk6AJZo?si=tHud07VkNIqFU13m')">
+    <img class="video-thumbnail" src="filme/superhero.jpg" alt="Thumbnail do Vídeo 1">
+    <h1 class="video-title">superhero movies</h1>
+</div>
+
+<div class="video-container" onclick="playVideo('Jl9UNjyvl1w?si=uGlvCj_utY93GjBc')">
+    <img class="video-thumbnail" src="filme/debi.jpg" alt="Thumbnail do Vídeo 2">
+    <div class="video-title">DÉBI&LÓIDE</div>
+</div>
+
+<div class="video-container" onclick="playVideo('9HhzTrUQfas?si=VkBepN1RUFWKFm6l')">
+    <img class="video-thumbnail" src="filme/tv.jpg" alt="Thumbnail do Vídeo 2">
+    <div class="video-title">DOIS MALUCOS NA TV</div>
+</div>
+
+<div class="video-container" onclick="playVideo('RZrbFXW2aZk?si=sqsRDqb9ZpHWlrfR')">
+    <img class="video-thumbnail" src="filme/crime.jpg" alt="Thumbnail do Vídeo 2">
+    <div class="video-title">GÊNIOS DO CRIME</div>
+</div>
+<!-- Adicione mais vídeos conforme necessário -->
+
+<script>
+function playVideo(videoId) {
+    var iframe = document.createElement('iframe');
+    iframe.setAttribute('width', '560');
+    iframe.setAttribute('height', '315');
+    iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId);
+    iframe.setAttribute('frameborder', '0');
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', '');
+    
+    var videoContainer = document.querySelector('.video-container');
+    videoContainer.innerHTML = '';
+    videoContainer.appendChild(iframe);
+}
+</script>
+
+</body>
+</html>

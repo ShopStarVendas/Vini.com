@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+    <meta name="description" content="o poder dos alimentos .">
+	  <meta name="keywords" content="estudar é a melhor coisas que podemos fazer.">
+  	<meta name="author" content="Luciano c. sl. jr">
+    <title>direito.com.vini.melhor-site </title>
+    <link rel="icon" href="logo.png">
+
+  
+  <style>
+      /* estilo para pagina */
+    /* ... (cor, estilo cor, etc...) ... */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fff; /* Fundo branco */
+      color: black; /* Texto preto */
+    }
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #f7f7f7;
+      max-width: 100px;
+      text-align: center;
+    }
+    .product-image {
+      max-width: 100%; /* Imagem preenchendo a largura */
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    /* Estilos para o botão do carrinho */
+.cart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-button img {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilos para o modal do carrinho */
+.cart-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 60%;
+  max-width: 300px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.cart-modal-content {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart-close {
+  text-align: right;
+}
+
+/* Estilos para a lista de produtos no carrinho */
+.cart-product {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-product img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* Estilos para o botão de fechar o modal */
+.cart-close-button {
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+    .product-title {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .product-description {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .details-link,
+    .contact-button {
+      color: #007bff;
+      text-decoration: none;
+      margin-top: 10px;
+      display: block;
+      font-size: 18px;
+    }
+    /* Estilo para a janela modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      max-width: 80%; /* Largura da janela modal */
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .modal-image {
+      max-width: 100%; /* Imagem preenchendo a largura */
+      height: auto;
+      border-radius: 10px;
+    }
+    .back-button {
+      background-color: #ccc;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    .whatsapp-bar {
+      background-color: #3bff00;
+      padding: 5px;
+      border-radius: 5px;
+      color: #fff;
+      text-align: center;
+    }
+    .footer {
+      background-color: #fff;
+      padding: 20px;
+    }
+    .product-button {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    /* Estilos para o botão do carrinho */
+.cart-button {
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
+  background-color: black;  
+  color: black;  
+  border: none;
+  border-radius5000%;
+  width: 60px;
+  height: 60p
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  x;
+}
+
+.cart-button img {
+  width: 100%;
+  height: auto;
+  border-radius: 130%;
+}
+<!-- finalizar pedido-->
+.cart-modal-content {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+#cart-products {
+  max-height: 300px; /* Ajuste a altura máxima desejada */
+  overflow-y: auto;
+}
+
+finalizar-pedido-button {
+  background-color: #4CAF50; /* Verde */
+  color: #fff;
+  border: none;
+  border-radius: 20px; /* Deixa as bordas redondas */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+<!-- ajuste das imagem dos produtos-->
+.details-image {
+  max-width: 150%;
+  height: auto;
+  max-height: 300px; /* Ajuste o tamanho conforme necessário */
+}
+
+.back-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  width: 100px; /* Largura do botão de volta */
+  text-align: center;
+  margin: 10px auto; /* Centralizar o botão horizontalmente */
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7;
+  max-width: 150px; /* Ajuste a largura conforme necessário */
+# max-height: 800px; /* Ajuste a altura conforme necessário */
+  text-align: center;
+}
+
+/* Outros estilos permanecem os mesmos */
+
+.product-details {
+  max-width: 6000px; /* Define a largura máxima para o card */
+  margin: 0 auto; /* Centraliza o card */
+  padding: 10px;
+}
+/* Estilos para a imagem dentro do modal */
+.modal-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Outros estilos, como botões, carrinho, etc. */
+/* ... */
+
+/* Ajuste do card do produto */
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f7f7f7;
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Ajuste dos produtos no carrinho */
+.cart-product img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+/* Ajuste do botão Voltar */
+.back-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  width: 100px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+/* Ajuste do botão Finalizar Pedido */
+.finalizar-pedido-button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+<!-- produtos pagina incial tudo-->
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: #f7f7f7;
+      max-width: 300px;
+      text-align: center;
+    }
+    .product-image {
+      max-width: 100%; /* Imagem preenchendo a largura */
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .product-title {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .product-description {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .product-price {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .details-link,
+    .contact-button {
+      color: #007bff;
+      text-decoration: none;
+      margin-top: 10px;
+      display: block;
+      font-size: 20px;
+      background-color: #26ff0068;
+      border-radius: 0px;
+      font-size: 20px;
+  font-size: 18px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+  background: linear-gradient(45deg, #00ff00, #00cc00);
+  color: #fff;
+  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  background: linear-gradient(45deg, #9900cc, #660099);
+  color: #fff;
+  box-shadow: 0 0 10px #9900cc, 0 0 20px #9900cc, 0 0 30px #9900cc;
+  background: linear-gradient(45deg, #ff0099, #ff0066);
+  color: #fff;
+  box-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+
+    }
+    /* Estilo para a janela modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .modal-content {
+      background-color: #fff;
+      max-width: 50%; /* Largura da janela modal */
+      margin: 0px auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .modal-image {
+      max-width: 100%; /* Imagem preenchendo a largura */
+      height: auto;
+      border-radius: 1000px;
+    }
+    .back-button {
+      background-color: #ccc;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    .whatsapp-bar {
+      background-color: #3bff00;
+      padding: 5px;
+      border-radius: 5px;
+      color: #fff;
+      text-align: center;
+    }
+    .footer {
+      background-color: #fff;
+      padding: 20px;
+    }
+    .product-button {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    <!-- lupa -->
+   .search-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.circle {
+    width: 50px; /* Tamanho da bolinha */
+    height: 50px; /* Tamanho da bolinha */
+    background-color: #000; /* Cor de fundo da bolinha */
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lupa-icon {
+    width: 30px; /* Largura da imagem da lupa */
+    height: 30px; /* Altura da imagem da lupa */
+    cursor: pointer;
+}
+
+.search-form {
+    margin: 10px; /* Margem para posicionamento */
+    text-align: center; /* Centraliza o formulário */
+}
+
+#search-input {
+    padding: 10px; /* Espaçamento interno para entrada de texto */
+    width: 250px; /* Largura do campo de pesquisa */
+    border: 2px solid #333; /* Borda ao redor do campo de pesquisa */
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+#search-input::placeholder {
+    color: #999; /* Cor do texto de espaço reservado (placeholder) */
+}
+
+#search-input:focus {
+    border-color: #007bff; /* Cor da borda ao focar no campo */
+    outline: none; /* Remove a borda ao redor do campo ao focar */
+}
+<!-- button remover carrinhos de compras-->
+  /* CSS */
+.btn-remove-neon {
+  background-color: #ff6cc2; /* Cor de fundo rosa */
+  color: #ffffff; /* Cor do texto branca */
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 20px; /* Bordas arredondadas */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Efeito de transição de cor e sombreamento */
+  box-shadow: 0 4px 6px rgba(255, 108, 194, 0.4); /* Sombreamento padrão */
+}
+
+.btn-remove-neon:hover {
+  background-color: #ff43a4; /* Cor de fundo rosa mais intensa no hover */
+  box-shadow: 0 6px 8px rgba(255, 67, 164, 0.6); /* Sombreamento no hover */
+}
+<!-- notificação -->
+/* Estilos para o botão neon */
+.notification {
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, #e91e63, #9c27b0, #2196f3, #ffffff, #4caf50);
+  background-size: 400% 400%;
+  animation: gradient 5s linear infinite;
+  transition: box-shadow 0.3s;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.notification:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+<!-- css menu -->
+/* Esconder o checkbox */
+.new-menu-toggle {
+    display: none;
+}
+
+/* Estilizar o ícone do menu */
+.new-menu-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    position: fixed;
+    left: 20px; /* Define a distância do canto esquerdo da tela */
+    top: 20px; /* Define a distância do topo da tela */
+}
+
+/* Estilizar o texto do menu */
+#new-menu-text {
+    position: fixed;
+    left: 20px; /* Define a distância do canto esquerdo da tela */
+    top: 50px; /* Define a distância do topo da tela */
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilizar a barra de navegação */
+.new-navbar {
+    display: none; /* Oculta o menu inicialmente */
+    position: fixed;
+    left: 0;
+    top: 60px; /* Define a distância do topo da tela */
+    background-color: #fff; /* Cor de fundo do menu */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra para efeito visual */
+    z-index: 999; /* Garante que o menu esteja sobreposto a outros elementos */
+    transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
+}
+
+/* Mostrar o menu quando o checkbox estiver marcado */
+.new-menu-toggle:checked ~ .new-navbar {
+    display: block; /* Exibe o menu quando o hambúrguer é clicado */
+    left: 70px; /* Ajusta a posição do menu para o lado direito */
+}
+
+/* Estilizar a barra de navegação */
+.new-navbar {
+    display: none; /* Oculta o menu inicialmente */
+    position: fixed;
+    left: 0;
+    top: 60px; /* Define a distância do topo da tela */
+    background-color: #fff; /* Cor de fundo do menu */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra para efeito visual */
+    z-index: 999; /* Garante que o menu esteja sobreposto a outros elementos */
+    transition: left 0.3s ease; /* Adiciona uma transição suave para a animação */
+    color: #333; /* Cor do texto do menu */
+}
+
+/* Estilizar os itens do menu */
+.new-menu li a {
+    text-decoration: none;
+    color: inherit; /* Herda a cor do texto da barra de navegação */
+}
+
+
+<!-- notificação -->
+
+
+</style>
+</head>
+<body>
+    <!-- vookies -->
+       <!-- notificação -->
+    
+<<input type="checkbox" id="new-menu-toggle" class="new-menu-toggle">
+<label for="new-menu-toggle" class="new-menu-icon">&#9776;</label>
+<span id="new-menu-text">Menu</span>
+
+
+<nav class="new-navbar">
+    <ul class="new-menu">
+        <li><a class="new-active" href="jogo.html">jogos🕹️</a></li>
+        <li><a href="fina.html">finanças 📊</a></li>
+        <li><a href="filme.html">filmes 🎥</a></li>
+        <li><a href="book.html">livros 📚</a></li>
+    </ul>
+</nav>
+
+
+<div class="new-icons">
+    <a href="#" class="fas fa-heart"></a>
+    <a href="#" class="fas fa-shopping-cart"></a>
+    <a href="#" class="fas fa-user"></a>
+</div>
+
+<!-- notificação -->
+    
+    <!-- cookies -->
+    <!-- pesquisa -->
+<div class="search-bar">
+    <input type="text" id="search-input" placeholder="Pesquisa, exemplo: Formalização da Rescisão" oninput="searchProducts()">
+</div>
+<div class="products-container">
+    <!-- Seus produtos aqui, cada produto deve ter uma classe "product" -->
+</div>
+<!-- produtos a abaixo-->
+<h1>Abandono de Emprego</h1>
+<h6>Sejam todos bem vindo⚖️</h6>
+<!-- corpinho kkkk-->
+
+<div class="products-container">
+    <div class="product">
+        <div class="product-details">
+            <img src="log1.jpg" alt="Caracterização do Abandono de Emprego " class="product-image details-image">
+            <h2 class="product-title">Caracterização do Abandono de Emprego</h2>
+            <p class="product-price"> Abandono de Emprego</p>
+            <a href="#" class="details-link" onclick="openModal('log1.jpg', 'Para caracterizar o abandono de emprego, é necessário que o empregado se ausente do trabalho por um período prolongado e sem justificativa<br> demonstrando a intenção de não mais retornar. A jurisprudência e a doutrina trabalhista entendem que um período de 30 dias consecutivos de ausência injustificada pode configurar abandono de emprego.')">ensinamento principal</a>
+            <a href="#" class="details-link" onclick="openModal('log1.jpg', 'Além da ausência prolongada, é fundamental que haja uma intenção clara do empregado de não mais retornar ao trabalho. Este aspecto subjetivo é crucial, pois a simples ausência por 30 dias não é suficiente para configurar o abandono. A intenção pode ser inferida através de ações ou omissões do empregado, como a falta de resposta às notificações do empregador.')">Intenção Clara de Abandonar</a>
+            <button class="add-to-cart-button neon-button " data-nome="Caracterização do Abandono de Emprego  " data-preco="1.00" data-imagem="log1.jpg">Está com dúvida, clique aqui!</button>
+            <a href="https://api.whatsapp.com/send?phone=+556798948044&text=Caracterização do Abandono de Emprego, estive no seu site vini" class="contact-button">Fale Conosco no WhatsApp</a>
+            <button class="back-button" onclick="closeModal()">Voltar</button>
+        </div>
+    </div>
+</div>
+
+<!-- corpinho 2 kkkk-->
+
+<div class="products-container">
+    <div class="product">
+        <div class="product-details">
+            <img src="log3.jpg" alt="formalização da recisão  " class="product-image details-image">
+            <h2 class="product-title">Formalização da Rescisão</h2>
+            <p class="product-price"> Formalização da Rescisão</p>
+            <a href="#" class="details-link" onclick="openModal('log3.jpg', 'Após adotar essas medidas e transcorrido o período de 30 dias consecutivos de ausência injustificada, o empregador pode proceder com a rescisão do contrato de trabalho por justa causa. Esta deve ser formalizada por escrito, especificando o motivo da justa causa e anexando as evidências que comprovem o abandono de emprego.')">ensinamento principal</a>
+            <a href="#" class="details-link" onclick="openModal('log3.jpg', 'A jurisprudência brasileira oferece diversos exemplos que elucidam a aplicação prática dessa norma. Um exemplo relevante é o caso julgado pelo Tribunal Superior do Trabalho (TST), onde o empregador conseguiu comprovar a intenção de abandono por parte do empregado mediante a apresentação de notificações enviadas e não respondidas, além de testemunhas que confirmaram as tentativas de contato. ')">Exemplos de Jurisprudência</a>
+            <button class="add-to-cart-button neon-button " data-nome="formalização de recisão   " data-preco="1.00" data-imagem="log3.jpg">Está com dúvida, clique aqui!</button>
+            <a href="https://api.whatsapp.com/send?phone=+556798948044&text=Caracterização do Abandono de Emprego, estive no seu site vini" class="contact-button">Fale Conosco no WhatsApp</a>
+            <button class="back-button" onclick="closeModal()">Voltar</button>
+        </div>
+    </div>
+</div>
+<!-- corpinho 3 kkkkk-->
+
+<div class="products-container">
+    <div class="product">
+        <div class="product-details">
+            <img src="log4.jpg" alt=" |Argumentação e Reflexão " class="product-image details-image">
+            <h2 class="product-title">Argumentação e Reflexão</h2>
+            <p class="product-price"> |Argumentação e Reflexão</p>
+            <a href="#" class="details-link" onclick="openModal('log4.jpg', 'A existência dessa norma visa proteger os empregadores de situações em que o empregado, ao abandonar o posto de trabalho, causa prejuízos e desorganização no ambiente laboral. Por outro lado, a necessidade de comprovar a intenção do abandono e a adoção de medidas formais para notificar o empregado garantem que os direitos dos trabalhadores não sejam violados arbitrariamente.')">ensinamento principal</a>
+            <a href="#" class="details-link" onclick="openModal('log4.jpg', 'Portanto, o abandono de emprego, previsto no artigo 482, alínea i, da CLT, é uma justa causa que exige uma análise cuidadosa e a adoção de procedimentos rigorosos por parte do empregador. Com a consolidação do entendimento jurídico e as práticas recomendadas, tanto empregadores quanto empregados têm seus direitos e deveres equilibrados, assegurando um ambiente de trabalho mais justo e organizado. Em caso de questionamento judicial, a apresentação de todas as provas documentais e testemunhais será fundamental para a validação da justa causa aplicada Este processo é essencial para manter a justiça no ambiente de trabalho, garantindo que o contrato seja respeitado e que a confiança entre empregador e empregado seja preservada. Assim, ambos podem contribuir para um ambiente laboral mais produtivo e harmonioso..')">conclusão</a>
+            <button class="add-to-cart-button neon-button " data-nome="formalização de recisão   " data-preco="1.00" data-imagem="log4.jpg">Está com dúvida, clique aqui!</button>
+            <a href="https://api.whatsapp.com/send?phone=+556798948044&text=Caracterização do Abandono de Emprego, estive no seu site vini" class="contact-button">Fale Conosco no WhatsApp</a>
+            <button class="back-button" onclick="closeModal()">Voltar</button>
+        </div>
+    </div>
+</div>
+
+<!-- funcao 1  -->
+<div class="products-container">
+    <div class="product">
+        <div class="product-details">
+            <img src="log2.jpg" alt="vini" class="product-image details-image">
+            <h2 class="product-title">Procedimentos Recomendados para o Empregador</h2>
+            <p class="product-price">Procedimentos para o Empregador</p>
+            <a href="#" class="details-link" onclick="openModal('log2.jpg','Para que o empregador possa rescindir o contrato de trabalho por justa causa com base no abandono de emprego, é recomendável adotar algumas medidas para comprovar a intenção do empregado e se resguardar de eventuais questionamentos futuros. Estas medidas incluem:<br>1. **Notificação ao Empregado**:- **Forma da Notificação**: Deve ser feita preferencialmente por escrito, com aviso de recebimento, e pode ser enviada por correio, e-mail ou qualquer outro meio que permita comprovar o envio e o recebimento.- **Conteúdo**: A notificação deve solicitar que o empregado retorne ao trabalho ou justifique sua ausência.<Br>2. **Registro das Ausências**:**Documentação**: O empregador deve manter um registro detalhado das ausências do empregado, anotando os dias em que ele não compareceu ao trabalho e as tentativas de contato realizadas.<Br>3. **Testemunhas**:  - **Confirmação da Ausência**: Se possível, contar com testemunhas que possam confirmar a ausência do empregado e as tentativas de contato realizadas.<Br>4. **Comunicação ao Sindicato**:**Informação Formal**: Em alguns casos, pode ser recomendável comunicar o sindicato da categoria sobre a situação, especialmente se houver previsão em convenção ou acordo coletivo.')">PROCEDIMENTOS</a>
+            <button class="add-to-cart-button neon-button " data-nome="vini" data-preco="10.00" data-imagem="log2.jpg">estou com dúvida, clique aqui!</button>
+            <a href="https://api.whatsapp.com/send?phone=+556798948044&text=ola vini estive no seu site, podemos conversar sobre o assunto, oque acha? " class="contact-button">Fale Conosco no WhatsApp</a>
+            <button class="back-button" onclick="closeModal()">Voltar</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Janela modal -->
+<div class="modal" id="modal">
+    <div class="modal-content" id="modal-content">
+        <!-- O conteúdo da janela modal será carregado aqui -->
+    </div>
+</div>
+
+
+<!-- Botão para abrir o carrinho -->
+<button id="show-cart-button" class="cart-button">
+    <img src="dvd.jpg" alt="duvidas">
+</button>
+
+<!-- Modal do carrinho -->
+<div class="cart-modal" id="cart-modal">
+    <div class="cart-modal-content">
+        <button id="cart-close-button" class="cart-close-button">Fechar</button>
+        <h3>Produtos no Carrinho</h3>
+        <div id="cart-products"></div>
+        <button id="finalizar-pedido-button" class="finalizar-pedido-button">Finalizar Dúvida?</button>
+    </div>
+</div>
+
+<!-- menu<!--  -->
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+    </header>
+    
+<script>
+// Array para armazenar os produtos no carrinho
+    const carrinho = [];
+
+    // Função para abrir o modal do carrinho
+    document.getElementById('show-cart-button').addEventListener('click', () => {
+      document.getElementById('cart-modal').style.display = 'block';
+      exibirProdutosNoCarrinho();
+    });
+
+    // Função para fechar o modal do carrinho
+    document.getElementById('cart-close-button').addEventListener('click', () => {
+      document.getElementById('cart-modal').style.display = 'none';
+    });
+
+    // Adicione um evento de clique //
+function reproduzirAudio() {
+  const audio = new Audio('bot.mp3'); // Substitua 'bot.mp3' pelo caminho para o seu arquivo de áudio
+  audio.preload = 'auto';
+  audio.play();
+}
+
+// Adicione um evento de clique //
+function exibirMensagem() {
+  // Exibir a mensagem na tela
+  alert('Sua dúvida foi adicionada à caixinha de dúvidas.');
+
+  // Remover a mensagem após 2 segundos (opcional)
+  setTimeout(() => {
+    // Limpar a mensagem da caixa de diálogo (opcional)
+    window.alert = function () {};
+  }, 2000);
+}
+
+
+
+const botoesAdicionar = document.querySelectorAll('.add-to-cart-button');
+botoesAdicionar.forEach((botao) => {
+  botao.addEventListener('click', function() {
+    const nome = this.getAttribute('data-nome');
+    const preco = parseFloat(this.getAttribute('data-preco'));
+    const imagem = this.getAttribute('data-imagem');
+
+    // Cria um objeto representando o produto
+    const produto = {
+      nome: nome,
+      preco: preco,
+      imagem: imagem
+    };
+
+    // Adiciona o produto à lista de produtos no carrinho
+    carrinho.push(produto);
+
+    // Atualiza o localStorage com a lista de produtos no carrinho
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+    // Exibe os produtos no carrinho
+    exibirProdutosNoCarrinho();
+
+    // Exibe a mensagem de confirmação
+    
+
+    // Reproduz o áudio de confirmação
+    reproduzirAudio();
+  });
+});
+
+    
+    // Função para exibir os produtos no carrinho
+    function exibirProdutosNoCarrinho() {
+      const cartModalContent = document.getElementById('cart-products');
+
+      // Obtém a lista de produtos no carrinho do localStorage
+      const produtosNoCarrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+      if (produtosNoCarrinho.length === 0) {
+        cartModalContent.innerHTML = '<p>Carrinho vazio.</p>';
+      } else {
+        cartModalContent.innerHTML = '';
+        let valorTotal = 0;  // Variável para armazenar o valor total
+
+        produtosNoCarrinho.forEach((item, index) => {
+          const productDiv = document.createElement('div');
+          productDiv.classList.add('cart-product');
+
+          productDiv.innerHTML = `
+            <img src="${item.imagem}" alt="${item.nome}">
+            <span>${item.nome} - R$ ${item.preco.toFixed(2)}</span>
+          `;
+
+          // Adicionar botão de remoção
+          const removeButton = document.createElement('button');
+          removeButton.textContent = 'Remover';
+          removeButton.addEventListener('click', () => {
+            removerProduto(index);
+          });
+
+          productDiv.appendChild(removeButton);
+          cartModalContent.appendChild(productDiv);
+
+          // Atualizar o valor total
+          valorTotal += item.preco;
+        });
+
+        // Exibe o valor total no carrinho
+        const totalDiv = document.createElement('div');
+        totalDiv.classList.add('cart-total');
+        totalDiv.textContent = `Total: R$ ${valorTotal.toFixed(2)}`;
+        cartModalContent.appendChild(totalDiv);
+      }
+    }
+
+    // Função para remover produtos do carrinho
+    function removerProduto(index) {
+      // Remove o produto do carrinho
+      carrinho.splice(index, 1);
+
+      // Atualiza o localStorage com a lista de produtos no carrinho
+      localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+      // Atualiza a exibição do carrinho
+      exibirProdutosNoCarrinho();
+    }
+
+    <!-- java -->
+document.getElementById('finalizar-pedido-button').addEventListener('click', () => {
+  const produtosNoCarrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  let mensagem = 'Finalizar Pedido - Meu pedido:\n';
+
+  if (produtosNoCarrinho.length > 0) {
+    produtosNoCarrinho.forEach((produto, index) => {
+      mensagem += `${index + 1}. ${produto.nome} - R$ ${produto.preco.toFixed(2)}\n`;
+    });
+
+    const nome = prompt('Qual é seu nome?:');
+    if (nome === null) {
+      return; // Cancela o pedido se o usuário clicar em "Cancelar"
+    }
+
+    const cidade = prompt('Qual sua cidade?:');
+    if (cidade === null) {
+      return; // Cancela o pedido se o usuário clicar em "Cancelar"
+    }
+
+    const complemento = prompt('Sua idade? (opcional):');
+    if (complemento === null) {
+      return; // Cancela o pedido se o usuário clicar em "Cancelar"
+    }
+
+    const formaPagamento = prompt('Por favor, conversa comigo e grátis haha):');
+    if (formaPagamento === null) {
+      return; // Cancela o pedido se o usuário clicar em "Cancelar"
+    }
+
+    if (formaPagamento === 'dinheiro') {
+      const troco = prompt('escreva um poema, brincadeira haha:');
+      if (troco === null) {
+        return; // Cancela o pedido se o usuário clicar em "Cancelar"
+      }
+      mensagem += '\nInformações do Pedido:\n';
+      mensagem += `Nome: ${nome}\nCidade: ${cidade}\nComplemento: ${complemento}\n`;
+      mensagem += `Forma de Pagamento: ${formaPagamento}\n`;
+      mensagem += `conversa vip : ${troco}\n`;
+    } else {
+      mensagem += '\nInformações do Pedido:\n';
+      mensagem += `Nome: ${nome}\nCidade: ${cidade}\nComplemento: ${complemento}\n`;
+      mensagem += `conversa 1 : ${formaPagamento}\n`;
+    }
+
+    const numeroWhatsApp = '+556798948044';
+    window.location.href = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensagem)}`;
+
+    localStorage.removeItem('carrinho');
+    exibirProdutosNoCarrinho();
+  } else {
+    alert('Seu carrinho está vazio. Adicione produtos antes de finalizar o pedido.');
+  }
+});
+
+
+<!-- para abrir a descrição-->
+function openModal(imageUrl, description) {
+      var modal = document.getElementById('modal');
+      var modalContent = document.getElementById('modal-content');
+      
+      modalContent.innerHTML = `
+        <img src="${imageUrl}" alt="Vini" class="modal-image">
+        <p>${description}</p>
+        <a href="vini.html" class="back-button" onclick="closeModal()">Voltar</a>
+      `;
+
+      modal.style.display = 'block';
+    }
+
+    function closeModal() {
+      var modal = document.getElementById('modal');
+      modal.style.display = 'none';
+    }
+
+<!-- 440444004 -->
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Seleciona o elemento do botão de menu
+    var newMenuToggle = document.getElementById('new-menu-toggle');
+    
+    // Seleciona o elemento da barra de navegação
+    var newNavbar = document.querySelector('.new-navbar');
+
+    // Adiciona um evento de clique ao botão de menu
+    newMenuToggle.addEventListener('click', function() {
+        // Alternar entre mostrar e ocultar a barra de navegação
+        newNavbar.style.display = (newNavbar.style.display === 'block') ? 'none' : 'block';
+    });
+});
+
+
+</script>
+<script src="bar.js"></script>
+</body>
+</html>
